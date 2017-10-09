@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-sm-12
+        article.chat
+          header.chat-header
+            .h3.chat-title Restart Chat Room
+          form.form-horizontal.chat-form(name='chatForm')
+            .form-group
+              label.col-sm-2.control-label(for='chat-username') Name:
+              .col-sm-10
+                input#chat-username.form-control(type='text', required='', value= user.name, readonly='')
+            .form-group
+              label.col-sm-2.control-label(for='chat-message') Message
+              .col-sm-10
+                .input-group
+                  input#chat-message.form-control(type='text', placeholder='Enter a message, then press enter', rows='2', autocomplete='off', required='')
+                  span.input-group-btn
+                    button#chat-submit.btn.btn-info(type='submit') Chat
+            .panel.panel-default
+              .panel-body.chat-display
+                p.text-muted.chat-text Welcome...add your message using the form above
